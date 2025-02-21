@@ -4,7 +4,23 @@ def main():
         # print(file_contents)
     
     # print(count_words(file_contents))
-    print(count_characters(file_contents))
+    # print(count_characters(file_contents))
+
+    alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+                'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+                'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+                'y', 'z']
+    
+    print("--- Begin report of books/frankenstein.txt ---")
+    print(f"{count_words(file_contents)} words found in the document\n")
+    
+    file_char_dict = count_characters(file_contents)
+
+    for char in file_char_dict:
+        if char in alphabet:
+            print(f"The '{char}' character was found {file_char_dict[char]} times'")
+    
+    print("--- End report ---")
     
 
 def count_words(text):
