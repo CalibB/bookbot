@@ -1,2 +1,2 @@
 # bookbot
-BookBot is just a simple program to refresh some fundamentals!
+BookBot is my first [Boot.dev](https://www.boot.dev) project!
