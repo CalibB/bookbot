@@ -1,2 +1,2 @@
 # bookbot
-BookBot is my first project!
+BookBot is just a simple program to refresh some fundamentals!
