@@ -1,4 +1,4 @@
-from stats import count_characters, count_words
+from stats import count_characters, count_words, sorted_dict
 
 def main():
     with open("./books/frankenstein.txt") as f:
@@ -9,16 +9,20 @@ def main():
                 'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
                 'y', 'z']
 
-    print("--- Begin report of books/frankenstein.txt ---")
-    print(f"{count_words(file_contents)} words found in the document\n")
+    print("============ BOOKBOT ============")
+    print("Analyzing book found at books/frankenstein.txt...")
+    print("----------- Word Count ----------")
+    print(f"Found {count_words(file_contents)} total words")
+    print("--------- Character Count -------")
 
     file_char_dict = count_characters(file_contents)
+    letter_list = sorted_dict(file_char_dict)
 
-    for char in file_char_dict:
-        if char in alphabet:
-            print(f"The '{char}' character was found {file_char_dict[char]} times'")
+    for dict in letter_list:
+        if dict['char'] in alphabet:
+            print(f"{dict['char']}: {dict['num']}")
 
-    print("--- End report ---")
+    print("============= END ===============")
 
 
 main()

@@ -17,3 +17,20 @@ def count_characters(text):
             char_count[char] += 1
 
     return char_count
+
+
+def sort_on(dict):
+    return dict["num"]
+
+
+def sorted_dict(dict):
+    letters = []
+    for key in dict:
+        unsort_letters = {
+            "char": key,
+            "num": int(dict[key])
+        }
+        letters.append(unsort_letters)
+
+    letters.sort(reverse=True, key=sort_on)
+    return letters
